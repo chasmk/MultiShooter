@@ -26,15 +26,15 @@ public:
 	AWeapon();
 	virtual void Tick(float DeltaTime) override;
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;//用来注册哪些变量需要在网络同步中被复制
-	virtual void OnRep_Owner() override;
-	void SetHUDAmmo();
+	virtual void OnRep_Owner() override;//该actor的owner变化时就会调用
+	void SetHUDAmmo();//设置HUD中当前弹夹的子弹数
 	void ShowPickupWidget(bool bShowWidget);
 	virtual void Fire(const FVector& HitTarget);
-	void Dropped();
+	void Dropped();//武器扔到原地
 	void AddAmmo(int32 AmmoToAdd);
 
 	/**
-	* Texture for the weapon crosshairs
+	* 武器准心的Texture 
 	*/
 	UPROPERTY(EditAnywhere, Category = Crosshairs)
 		class UTexture2D* CrosshairsCenter;
@@ -70,8 +70,10 @@ public:
 	UPROPERTY(EditAnywhere, Category = Combat)
 		bool bAutomatic = true;
 
+	//捡枪时的声音
 	UPROPERTY(EditAnywhere)
-	class USoundCue* EquipSound;//捡枪时的声音
+	class USoundCue* EquipSound;
+	
 protected:
 	virtual void BeginPlay() override;
 

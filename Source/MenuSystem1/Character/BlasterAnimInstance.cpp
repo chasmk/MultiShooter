@@ -58,13 +58,18 @@ void UBlasterAnimInstance::NativeUpdateAnimation(float DeltaTime)//ÀàËÆÓÚtickº¯Ê
 	const float Interp = FMath::FInterpTo(Lean, Target, DeltaTime, 6.f);//²åÖµÆ½»¬
 	Lean = FMath::Clamp(Interp, -90.f, 90.f);
 
+	//ÉèÖÃAimOffsetÏà¹Ø±äÁ¿
 	AO_Yaw = BlasterCharacter->GetAO_Yaw();//½ÇÉ«ÀàÃ¿Ö¡¸üÐÂAO_Yaw,ÕâÀïÔÙ»ñÈ¡,ÔÚ¶¯»­À¶Í¼ÖÐÊ¹ÓÃ
 	AO_Pitch = BlasterCharacter->GetAO_Pitch();
 	//UE_LOG(LogTemp, Warning, TEXT("AO_Yaw : %f"), AO_Yaw);
+
+
+	
 	//ÉèÖÃFABRIK£¬µ÷Õû×óÊÖ³ÖÇ¹Î»ÖÃ
 	if (bWeaponEquipped && EquippedWeapon && EquippedWeapon->GetWeaponMesh() && BlasterCharacter->GetMesh())
 	{
-		LeftHandTranform = EquippedWeapon->GetWeaponMesh()->GetSocketTransform(FName("LeftHandSocket"), ERelativeTransformSpace::RTS_World);
+		LeftHandTranform = EquippedWeapon->GetWeaponMesh()->GetSocketTransform(//»ñÈ¡Ç¹ÉÏµÄ×óÊÖsocketÎ»ÖÃÐÅÏ¢
+			FName("LeftHandSocket"), ERelativeTransformSpace::RTS_World);
 		FVector OutPosition;
 		FRotator OutRotation;
 		BlasterCharacter->GetMesh()->TransformToBoneSpace(FName("hand_r"), LeftHandTranform.GetLocation(), FRotator::ZeroRotator, OutPosition, OutRotation);

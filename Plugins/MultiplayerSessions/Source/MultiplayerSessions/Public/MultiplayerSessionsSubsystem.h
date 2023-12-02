@@ -11,7 +11,7 @@
 //
 // 声明我们子定义的delegate，用于Menu class去绑定上callbacks
 //
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiplayerOnCreateSessionComplete, bool, bWasSuccessful);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiplayerOnCreateSessionComplete, bool, bWasSuccessful);//dynamic mul
 DECLARE_MULTICAST_DELEGATE_TwoParams(FMultiplayerOnFindSessionsComplete, const TArray<FOnlineSessionSearchResult>& SessionResults, bool bWasSuccessful);
 DECLARE_MULTICAST_DELEGATE_OneParam(FMultiplayerOnJoinSessionComplete, EOnJoinSessionCompleteResult::Type Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiplayerOnDestroySessionComplete, bool, bWasSuccessful);
@@ -35,7 +35,7 @@ public:
 	void StartSession();
 
 	//
-	//我们子定义的delegate，用于Menu class去绑定上callbacks
+	// 我们自定义的delegate，用于Menu class去绑定上callbacks
 	//
 	FMultiplayerOnCreateSessionComplete MultiplayerOnCreateSessionComplete;
 	FMultiplayerOnFindSessionsComplete MultiplayerOnFindSessionsComplete;
@@ -45,7 +45,7 @@ public:
 
 protected:
 	//
-	// 内部callback函数用于delegate，之后将加到online session interface delegate list
+	//	内部callback函数用于delegate，之后将加到online session interface delegate list
 	//  这些函数不需要被外部调用
 	//
 	void OnCreateSessionComplete(FName SessionName, bool bWasSuccessful);

@@ -16,7 +16,7 @@ class MULTIPLAYERSESSIONS_API UMenu : public UUserWidget
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintCallable) //初始化菜单，
+	UFUNCTION(BlueprintCallable) //初始化菜单，蓝图中调用
 	void MenuSetup(int32 NumberOfPublicConnections = 4, FString TypeOfMatch = FString(TEXT("FreeForAlljyj")),
 	               FString LobbyPath = FString(TEXT("/Game/ThirdPersonCPP/Maps/Lobby")));
 

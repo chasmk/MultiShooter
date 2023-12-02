@@ -9,7 +9,12 @@ void ALobbyGameMode::PostLogin(APlayerController* NewPlayer)
 	Super::PostLogin(NewPlayer);
 
 	int32 NumberOfPlayers = GameState->PlayerArray.Num();
-	if (NumberOfPlayers == 2)
+	GEngine->AddOnScreenDebugMessage(1,
+		10.f,
+		FColor::Green,
+		FString::Printf(TEXT("GetNumPlayers(): %d  NumberOfPlayers: %d"), GetNumPlayers(), NumberOfPlayers));
+
+	if (NumberOfPlayers == 3)
 	{
 		UWorld* World = GetWorld();
 		if (World)

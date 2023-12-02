@@ -1,0 +1,444 @@
+<mxfile host="Electron" modified="2023-12-02T13:36:53.845Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="2waQTCLAbH0g3d8QKDDY" version="22.1.2" type="device">
+  <diagram name="第 1 页" id="bMrVAK8gPkkUIHQVz1YE">
+    <mxGraphModel dx="5907" dy="4916" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-1" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#F19C99;" vertex="1" parent="1">
+          <mxGeometry x="534" y="-1028" width="1388" height="822" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-2" value="&lt;b&gt;武器系统&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-1">
+          <mxGeometry x="6" y="1" width="68" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-3" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="558" y="-1000" width="913" height="754" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-4" value="&lt;b&gt;Character&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-3">
+          <mxGeometry width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-5" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#E6E6E6;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-3">
+          <mxGeometry x="30" y="70" width="230" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-6" value="&lt;b&gt;Input Action&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-5">
+          <mxGeometry x="-5" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-7" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MoveForward&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;arcSize=31;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-5">
+          <mxGeometry x="20" y="30" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-8" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MoveRight&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;arcSize=31;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-5">
+          <mxGeometry x="25" y="60" width="55" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-9" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Turn&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;arcSize=50;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-5">
+          <mxGeometry x="37.5" y="90" width="32.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-10" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;LookUp&lt;/font&gt;&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;arcSize=31;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-5">
+          <mxGeometry x="33.75" y="120" width="46.25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-11" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Jump&lt;/font&gt;&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;arcSize=31;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-5">
+          <mxGeometry x="37.5" y="150" width="32.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-12" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Crouch&lt;/font&gt;&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;arcSize=31;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-5">
+          <mxGeometry x="34.38" y="180" width="41.25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-13" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Equip&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;arcSize=0;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-5">
+          <mxGeometry x="140" y="30" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-14" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Aim&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;arcSize=0;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-5">
+          <mxGeometry x="145" y="78" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-15" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Reload&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;arcSize=0;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-5">
+          <mxGeometry x="137.5" y="140" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-16" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Fire&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;arcSize=0;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-5">
+          <mxGeometry x="145.75" y="110" width="28.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-17" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#E6E6E6;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-3">
+          <mxGeometry x="364.5" y="30" width="518" height="698" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-18" value="&lt;b&gt;Combat Component&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-19" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#E6E6E6;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="30" y="40" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-20" value="&lt;b&gt;Equip Weapon&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-19">
+          <mxGeometry width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-21" value="Attach" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-19">
+          <mxGeometry x="39" y="30" width="101" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-22" value="Set HUD" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-19">
+          <mxGeometry x="39" y="57.5" width="101" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-23" value="更新相机视角设置" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-19">
+          <mxGeometry x="39" y="87.5" width="101" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-24" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#E6E6E6;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="29" y="170" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-25" value="&lt;b&gt;Set Aiming&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-24">
+          <mxGeometry width="82" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-26" value="Attach" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-24">
+          <mxGeometry x="39" y="30" width="101" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-27" value="Set HUD" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-24">
+          <mxGeometry x="39" y="57.5" width="101" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-28" value="更新相机视角设置" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-24">
+          <mxGeometry x="39" y="87.5" width="101" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-29" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#E6E6E6;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="29" y="302" width="149" height="112" as="geometry">
+            <mxRectangle x="29" y="324" width="18" height="12" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-30" value="&lt;b&gt;Tick&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-29">
+          <mxGeometry width="44" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-31" value="准心Trace" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-29">
+          <mxGeometry x="10" y="28" width="129" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-32" value="绘制HUD准心" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-29">
+          <mxGeometry x="24" y="57.5" width="101" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-33" value="FOV插值更新" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-29">
+          <mxGeometry x="24" y="87.5" width="101" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-34" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#E6E6E6;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="293" y="226" width="183" height="92" as="geometry">
+            <mxRectangle x="29" y="324" width="18" height="12" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-35" value="&lt;b&gt;TraceUnderCrosshairs&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-34">
+          <mxGeometry width="148" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-36" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 8px; background-color: initial;&quot;&gt;1.把屏幕中心(准心)反向投影到3d空间&lt;/span&gt;&lt;/div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. 在中心点向前做trace&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;3. 根据trace结果更新准心颜色(瞄准人时为红色)，&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;4. 返回trace结果终点&lt;/span&gt;&lt;/div&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-34">
+          <mxGeometry x="8" y="20" width="152" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-17" source="2DNq-SqJjKYiAPZ9AIUP-31" target="2DNq-SqJjKYiAPZ9AIUP-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-38" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#E6E6E6;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="291" y="332.25" width="183" height="74.5" as="geometry">
+            <mxRectangle x="29" y="324" width="18" height="12" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-39" value="&lt;b&gt;SetHUDCrosshairs&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-38">
+          <mxGeometry width="126" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-40" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 8px; background-color: initial;&quot;&gt;1.根据当前武器设置准心的Texture&lt;/span&gt;&lt;/div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. 根据角色当前状态(velocity，inair，aim，shoot)更新准心放缩的&lt;/span&gt;Factor&lt;/div&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-38">
+          <mxGeometry x="6.5" y="24.5" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-17" source="2DNq-SqJjKYiAPZ9AIUP-32" target="2DNq-SqJjKYiAPZ9AIUP-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-42" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#E6E6E6;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="291" y="422" width="183" height="56" as="geometry">
+            <mxRectangle x="29" y="324" width="18" height="12" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-43" value="&lt;b&gt;InterpFOV&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-42">
+          <mxGeometry width="78" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-44" value="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;根据是否在aim，对相机的FOV进行插值更新&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-42">
+          <mxGeometry x="8" y="30" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-17" source="2DNq-SqJjKYiAPZ9AIUP-33" target="2DNq-SqJjKYiAPZ9AIUP-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-46" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=none;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#E6E6E6;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="27" y="440" width="149" height="96" as="geometry">
+            <mxRectangle x="29" y="324" width="18" height="12" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-47" value="&lt;b&gt;Fire&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-46">
+          <mxGeometry x="1" width="42" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-48" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;播放开火montage&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-46">
+          <mxGeometry x="20" y="24" width="72" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-49" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;EquippedWeapon-&amp;gt;&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;Fire&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-46">
+          <mxGeometry x="20" y="44" width="92" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-46" source="2DNq-SqJjKYiAPZ9AIUP-51" target="2DNq-SqJjKYiAPZ9AIUP-46">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="132" y="78" />
+              <mxPoint x="132" y="100" />
+              <mxPoint x="-23" y="100" />
+              <mxPoint x="-23" y="72" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-51" value="&lt;span style=&quot;font-size: 8px;&quot;&gt;SetTimer用于自动开火&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-46">
+          <mxGeometry x="20" y="68" width="92" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-52" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=none;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#E6E6E6;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="29" y="560" width="149" height="90" as="geometry">
+            <mxRectangle x="29" y="324" width="18" height="12" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-53" value="&lt;b&gt;Reload&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-52">
+          <mxGeometry x="-8" width="60" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-52" source="2DNq-SqJjKYiAPZ9AIUP-55" target="2DNq-SqJjKYiAPZ9AIUP-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-55" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;播放Reload montage&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-52">
+          <mxGeometry x="20" y="30" width="84" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-56" value="&lt;span style=&quot;font-size: 8px;&quot;&gt;Update Ammo&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-52">
+          <mxGeometry x="28" y="62" width="68" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.001;entryY=0.602;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-17" target="2DNq-SqJjKYiAPZ9AIUP-46">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-164.5" y="160" as="sourcePoint" />
+            <mxPoint x="22.75" y="496.9279999999999" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-55" y="160" />
+              <mxPoint x="-55" y="498" />
+              <mxPoint x="23" y="498" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-58" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;EquippedWeapon&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="323.5" y="486" width="84.5" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-59" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;bAiming&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="339.5" y="512" width="52.5" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-60" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CarriedAmmo&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="330.5" y="538" width="70.5" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-61" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CombatState&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="333" y="564" width="65.5" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-17" source="2DNq-SqJjKYiAPZ9AIUP-75" target="2DNq-SqJjKYiAPZ9AIUP-58">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="259.5" y="532.5" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="292" y="528" />
+              <mxPoint x="292" y="494" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-17" source="2DNq-SqJjKYiAPZ9AIUP-75" target="2DNq-SqJjKYiAPZ9AIUP-60">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="259.5" y="532.5" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="292" y="528" />
+              <mxPoint x="292" y="546" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-17" source="2DNq-SqJjKYiAPZ9AIUP-75" target="2DNq-SqJjKYiAPZ9AIUP-59">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="259.5" y="532.5" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="292" y="528" />
+              <mxPoint x="292" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-17" source="2DNq-SqJjKYiAPZ9AIUP-75" target="2DNq-SqJjKYiAPZ9AIUP-61">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="259.5" y="532.5" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="292" y="528" />
+              <mxPoint x="292" y="572" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-66" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;BaseWalkSpeed&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="206" y="598" width="80" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-67" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;AimWalkSpeed&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="207.5" y="622" width="74.5" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-68" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CrosshairFactor(s)&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="295.5" y="597" width="90.5" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-69" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;HitTarget&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="315.12" y="668" width="51.25" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-70" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;HUDPackage&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="307.87" y="620" width="65.75" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-71" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;FOV(s)&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="307.87" y="644" width="65.75" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-72" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Fire(s)&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="399.5" y="598" width="65.75" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-73" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CarriedAmmoMap&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="390.13" y="620" width="84.5" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-74" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MaxCarriedAmmo&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="391.5" y="642" width="84.5" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-75" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Replicated&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-17">
+          <mxGeometry x="209" y="520" width="52.5" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-76" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#E6E6E6;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-3">
+          <mxGeometry x="24.000000000000004" y="610" width="248.25" height="118" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-77" value="&lt;b&gt;Buff Component&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-76">
+          <mxGeometry width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.003;entryY=0.336;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-3" source="2DNq-SqJjKYiAPZ9AIUP-13" target="2DNq-SqJjKYiAPZ9AIUP-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="373" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-79" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;均在Server上调用&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-3">
+          <mxGeometry x="260" y="92" width="84" height="17" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-80" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;待装备的武器Weapon *&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-3">
+          <mxGeometry x="251" y="109" width="113.5" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-3" source="2DNq-SqJjKYiAPZ9AIUP-14" target="2DNq-SqJjKYiAPZ9AIUP-24">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="378" y="158" />
+              <mxPoint x="378" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-82" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;均在Server上调用&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-3">
+          <mxGeometry x="260" y="142" width="84" height="17" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-83" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MultiCast RPC&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-3">
+          <mxGeometry x="310" y="514" width="73" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.007;entryY=0.611;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-3" source="2DNq-SqJjKYiAPZ9AIUP-15" target="2DNq-SqJjKYiAPZ9AIUP-52">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="220" />
+              <mxPoint x="300" y="645" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-85" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#A9C4EB;" vertex="1" parent="1">
+          <mxGeometry x="1533" y="-991" width="151" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-86" value="&lt;b&gt;Player Controller&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-85">
+          <mxGeometry width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-87" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#7EA6E0;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-85">
+          <mxGeometry x="25" y="45" width="99" height="92.5" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-88" value="&lt;b&gt;Set HUD&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-87">
+          <mxGeometry width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-89" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#9AC7BF;" vertex="1" parent="1">
+          <mxGeometry x="1710" y="-989.75" width="172" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-90" value="&lt;b&gt;HUD&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-89">
+          <mxGeometry width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-91" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#67AB9F;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-89">
+          <mxGeometry x="14" y="32" width="138" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-92" value="&lt;b&gt;DrawCrossHair&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-91">
+          <mxGeometry y="1" width="106" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-93" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CrosshairPackage&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-89">
+          <mxGeometry x="18" y="144" width="88" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2DNq-SqJjKYiAPZ9AIUP-87" target="2DNq-SqJjKYiAPZ9AIUP-89">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2DNq-SqJjKYiAPZ9AIUP-22" target="2DNq-SqJjKYiAPZ9AIUP-87">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-96" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#F8CECC;" vertex="1" parent="1">
+          <mxGeometry x="1508" y="-510" width="327" height="264" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-97" value="&lt;b&gt;Weapon : Actor(&lt;/b&gt;Replicated&lt;b style=&quot;background-color: initial;&quot;&gt;)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-96">
+          <mxGeometry width="172" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-98" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;WeaponMesh&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F19C99;strokeColor=#b85450;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-96">
+          <mxGeometry x="12" y="46" width="68" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-99" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;AreaSphere&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-96">
+          <mxGeometry x="16" y="66" width="60" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-100" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;PickupWidget&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-96">
+          <mxGeometry x="10" y="86" width="70" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-101" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;FireMontage&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-96">
+          <mxGeometry x="14" y="126" width="64" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-102" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Ammo&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-96">
+          <mxGeometry x="260" y="46" width="36" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-103" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MagCapacity&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-96">
+          <mxGeometry x="246" y="66" width="66" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-104" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial; font-size: 8px;&quot;&gt;1. AreaSphere只在server上开启碰撞检测&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 8px; background-color: initial;&quot;&gt;2. WeaponState和Ammo添加了OnRep函数（Server上每次更新都会把他们同步到客户端），所以我们&lt;b&gt;只在server上更新&lt;/b&gt;这两个变量&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 8px; background-color: initial;&quot;&gt;3. AActor有个On_RepOwner函数，每次Owner更新都会调用&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-96">
+          <mxGeometry x="97" y="92" width="221" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-105" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;WeaponState&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-96">
+          <mxGeometry x="106" y="46" width="68" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-106" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;WeaponType&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-96">
+          <mxGeometry x="106" y="66" width="68" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-107" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Casing: 弹壳&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-96">
+          <mxGeometry x="14" y="106" width="64" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-96" source="2DNq-SqJjKYiAPZ9AIUP-115" target="2DNq-SqJjKYiAPZ9AIUP-102">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="238" y="25.5" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="2DNq-SqJjKYiAPZ9AIUP-96" source="2DNq-SqJjKYiAPZ9AIUP-115" target="2DNq-SqJjKYiAPZ9AIUP-105">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="190" y="25.5" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-110" value="" style="swimlane;startSize=0;fillStyle=auto;fillColor=#000000;fontColor=#333333;strokeColor=#666666;swimlaneFillColor=#EA6B66;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-96">
+          <mxGeometry x="14" y="158" width="130" height="92.5" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-111" value="&lt;b&gt;Fire&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-110">
+          <mxGeometry width="42" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-112" value="&lt;span style=&quot;font-size: 8px;&quot;&gt;播放Weapon的开火动画&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-110">
+          <mxGeometry x="18" y="24" width="92" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-113" value="&lt;span style=&quot;font-size: 8px;&quot;&gt;在枪的socket上生成弹壳&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-110">
+          <mxGeometry x="18" y="44" width="92" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-114" value="&lt;span style=&quot;font-size: 8px;&quot;&gt;减少子弹数并更新HUD&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-110">
+          <mxGeometry x="18" y="66" width="92" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-115" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Replicated&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="2DNq-SqJjKYiAPZ9AIUP-96">
+          <mxGeometry x="184" y="18" width="52.5" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="2DNq-SqJjKYiAPZ9AIUP-38" target="2DNq-SqJjKYiAPZ9AIUP-93">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2DNq-SqJjKYiAPZ9AIUP-49" target="2DNq-SqJjKYiAPZ9AIUP-110">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1061" y="-474" />
+              <mxPoint x="1120" y="-474" />
+              <mxPoint x="1120" y="-306" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2DNq-SqJjKYiAPZ9AIUP-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="2DNq-SqJjKYiAPZ9AIUP-114" target="2DNq-SqJjKYiAPZ9AIUP-87">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1858" y="-279" />
+              <mxPoint x="1858" y="-740" />
+              <mxPoint x="1608" y="-740" />
+              <mxPoint x="1608" y="-853" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

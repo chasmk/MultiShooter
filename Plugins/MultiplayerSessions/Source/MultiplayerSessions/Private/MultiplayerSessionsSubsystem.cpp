@@ -13,10 +13,13 @@ UMultiplayerSessionsSubsystem::UMultiplayerSessionsSubsystem():
 	DestroySessionCompleteDelegate(FOnDestroySessionCompleteDelegate::CreateUObject(this, &ThisClass::OnDestroySessionComplete)),
 	StartSessionCompleteDelegate(FOnStartSessionCompleteDelegate::CreateUObject(this, &ThisClass::OnCreateSessionComplete))
 {
-	IOnlineSubsystem* Subsystem = IOnlineSubsystem::Get();
+	IOnlineSubsystem* Subsystem = IOnlineSubsystem::Get();//获取当前激活的在线子系统实例
 	if (Subsystem)
 	{//初始化SessionInterface
-		SessionInterface = Subsystem->GetSessionInterface();
+	    SessionInterface = Subsystem->GetSessionInterface();//获取在线子系统的会话接口。
+	    //会话接口（Session Interface）用于处理在线游戏会话的创建、加入、查询等操作。
+
+	    UE_LOG(LogTemp, Warning, TEXT("name: %s, platform: %s"), *Subsystem->GetSubsystemName().ToString(), *Subsystem->GetLocalPlatformName());
 	}
 }
 
@@ -52,6 +55,7 @@ void UMultiplayerSessionsSubsystem::CreateSession(int32 NumPublicConnections, FS
     LastSessionSettings->BuildUniqueId = 1;
 
     const ULocalPlayer* LocalPlayer = GetWorld()->GetFirstLocalPlayerFromController();
+    //UE_LOG(LogTemp, Warning, TEXT("UniqueNetId %s"), *LocalPlayer->GetPreferredUniqueNetId().GetUniqueNetId()->ToString());//id示例：DESKTOP-FBEHSEP-058A8E3F4DD5A950F426D1B6B9478326
     if (!SessionInterface->CreateSession(*LocalPlayer->GetPreferredUniqueNetId(), NAME_GameSession, *LastSessionSettings))
     {//此时会话没有创建成功
         SessionInterface->ClearOnCreateSessionCompleteDelegate_Handle(CreateSessionCompleteDelegateHandle);
@@ -60,7 +64,6 @@ void UMultiplayerSessionsSubsystem::CreateSession(int32 NumPublicConnections, FS
         //告诉menu，会话没有创建成功
         MultiplayerOnCreateSessionComplete.Broadcast(false);
     }
-
 }
 
 void UMultiplayerSessionsSubsystem::FindSessions(int32 MaxSearchResults)
@@ -140,6 +143,7 @@ void UMultiplayerSessionsSubsystem::StartSession()
         MultiplayerOnStartSessionComplete.Broadcast(false);
     }
 }
+
 //
 // callback funcs
 //

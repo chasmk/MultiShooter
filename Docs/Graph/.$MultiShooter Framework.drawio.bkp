@@ -1,0 +1,13 @@
+<mxfile host="Electron" modified="2023-11-29T13:48:45.617Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="9Q9rLi3SgQ159gBwzRpq" version="22.1.2" type="device">
+  <diagram name="第 1 页" id="Ch8bmnDFyF8E3RgSQAQS">
+    <mxGraphModel dx="683" dy="402" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YO6n8Gt0zjebK8FSVfMU-1" value="1. 动画系统&lt;br&gt;2. 武器系统&lt;br&gt;3. 战斗系统&lt;br&gt;4. UI系统&lt;br&gt;5. 联机同步与变量复制" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="10" y="10" width="140" height="150" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

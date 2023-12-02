@@ -9,14 +9,17 @@
 
 void UMenu::MenuSetup(int32 NumberOfPublicConnections, FString TypeOfMatch, FString LobbyPath)
 {
-	PathToLobby = FString::Printf(TEXT("%s?listen"), *LobbyPath);
 	//保存参数
+	PathToLobby = FString::Printf(TEXT("%s?listen"), *LobbyPath);// "/Game/Maps/Lobby?listen"
 	NumPublicConnections = NumberOfPublicConnections;
 	MatchType = TypeOfMatch;
+
+	//在游戏中显示
 	AddToViewport();
 	SetVisibility(ESlateVisibility::Visible);
 	bIsFocusable = true;
 
+	//设置InputMode为UI only
 	UWorld* World = GetWorld();
 	if (World)
 	{
@@ -27,13 +30,13 @@ void UMenu::MenuSetup(int32 NumberOfPublicConnections, FString TypeOfMatch, FStr
 			InputModeData.SetWidgetToFocus(TakeWidget());
 			InputModeData.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
 			PlayerController->SetInputMode(InputModeData);
-			PlayerController->SetShowMouseCursor(true);
+			PlayerController->SetShowMouseCursor(true);//显示鼠标
 		}
 	}
 
 	UGameInstance* GameInstance = GetGameInstance();
 	if (GameInstance)
-	{//初始化这个变量，这样就能通过它调用subsystem类里面的函数
+	{	//初始化这个变量，这样就能通过它调用subsystem类里面的函数
 		MultiplayerSessionsSubsystem = GameInstance->GetSubsystem<UMultiplayerSessionsSubsystem>();
 	}
 
@@ -141,7 +144,10 @@ void UMenu::OnJoinSession(EOnJoinSessionCompleteResult::Type Result)
 		{
 			FString Address;
 			SessionInterface->GetResolvedConnectString(NAME_GameSession, Address);
-
+			// GEngine->AddOnScreenDebugMessage(1,
+			// 	10.f,
+			// 	FColor::Blue,
+			// 	Address);//是114.xxx.xxx.xxx:7777
 			APlayerController* PlayerController = GetGameInstance()->GetFirstLocalPlayerController();
 			if (PlayerController)
 			{
@@ -229,6 +235,7 @@ void UMenu::MenuTearDown()
 		}
 	}
 }
+
 /*
 void UMenu::StartGameSession()
 {

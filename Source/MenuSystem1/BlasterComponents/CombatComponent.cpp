@@ -70,16 +70,105 @@ void UCombatComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 
 }
 
-void UCombatComponent::FireButtonPressed(bool bPressed)
-{//角色类中press事件触发后调用该函数
-	bFireButtonPressed = bPressed;
 
-	if (bFireButtonPressed && EquippedWeapon)
+void UCombatComponent::EquipWeapon(AWeapon* WeaponToEquip)//该函数仅在server上调用
+{
+	if (Character == nullptr || WeaponToEquip == nullptr) return;
+	
+	if (EquippedWeapon)
+	{//避免捡起多把枪
+		EquippedWeapon->Dropped();
+	}
+	
+	EquippedWeapon = WeaponToEquip;
+	
+	EquippedWeapon->SetWeaponState(EWeaponState::EWS_Equipped);//更新武器状态为已装备
+	
+	const USkeletalMeshSocket* HandSocket = Character->GetMesh()->GetSocketByName(FName("RightHandSocket"));
+	if (HandSocket)
 	{
-		Fire();
+		HandSocket->AttachActor(EquippedWeapon, Character->GetMesh());//将武器和角色绑定
+	}
+	
+	EquippedWeapon->SetOwner(Character);
+	
+	//以上属性都会自动同步复制到客户端
+
+	
+	EquippedWeapon->SetHUDAmmo();//在server上设置子弹数，在wapon类的OnRep_Owner函数同步给client
+	
+	//设置武器类型名字hud
+	UEnum* EnumPtr = StaticEnum<EWeaponType>();
+	FText WeaponType = EnumPtr->GetDisplayNameTextByIndex(int32(WeaponToEquip->GetWeaponType()));
+	Controller = Controller == nullptr ? Cast<ABlasterPlayerController>(Character->Controller) : Controller;
+	if (Controller)
+	{
+		Controller->SetHUDWeaponType(WeaponType.ToString());
+	}
+
+	//更新后备（携带）弹药数
+	if (CarriedAmmoMap.Contains(EquippedWeapon->GetWeaponType()))
+	{//从weapon那里获取武器类型
+		CarriedAmmo = CarriedAmmoMap[EquippedWeapon->GetWeaponType()];
+	}
+	if (Controller)
+	{//在server上设置携带的子弹数，用OnRep_CarriedAmmo函数同步给client
+		Controller->SetHUDCarriedAmmo(CarriedAmmo);
+	}
+
+	//播放捡枪声音
+	if (EquippedWeapon->EquipSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(
+			this,
+			EquippedWeapon->EquipSound,
+			Character->GetActorLocation()
+		);
+	}
+
+	//自动装弹
+	if (EquippedWeapon->IsEmpty())
+	{
+		Reload();
+	}
+
+	//角色持枪后，角色朝向不会随移动方向改变，而是用leaning和strafing
+	Character->GetCharacterMovement()->bOrientRotationToMovement = false;
+	Character->bUseControllerRotationYaw = true;
+}
+void UCombatComponent::OnRep_EquippedWeapon()
+{//这个onRep用来解决client自己上的leaning和strafing
+	if (EquippedWeapon && Character)
+	{
+		//只在client上
+		EquippedWeapon->SetWeaponState(EWeaponState::EWS_Equipped);//更新武器状态为已装备
+		const USkeletalMeshSocket* HandSocket = Character->GetMesh()->GetSocketByName(FName("RightHandSocket"));
+		if (HandSocket)
+		{
+			HandSocket->AttachActor(EquippedWeapon, Character->GetMesh());//将武器和角色绑定
+		}
+		//角色持枪后，角色朝向不会随移动方向改变，而是用leaning和strafing
+		Character->GetCharacterMovement()->bOrientRotationToMovement = false;
+		Character->bUseControllerRotationYaw = true;
+
+		if (EquippedWeapon->EquipSound)
+		{
+			UGameplayStatics::PlaySoundAtLocation(
+				this,
+				EquippedWeapon->EquipSound,
+				Character->GetActorLocation()
+			);
+		}
+		//设置武器类型名字hud
+		UEnum* EnumPtr = StaticEnum<EWeaponType>();
+		FText WeaponType = EnumPtr->GetDisplayNameTextByIndex(int32(EquippedWeapon->GetWeaponType()));
+		Controller = Controller == nullptr ? Cast<ABlasterPlayerController>(Character->Controller) : Controller;
+		if (Controller)
+		{
+			Controller->SetHUDWeaponType(WeaponType.ToString());
+		}
 	}
 }
-
 void UCombatComponent::PickupAmmo(EWeaponType WeaponType, int32 AmmoAmount)
 {
 	if (CarriedAmmoMap.Contains(WeaponType))
@@ -91,6 +180,24 @@ void UCombatComponent::PickupAmmo(EWeaponType WeaponType, int32 AmmoAmount)
 	{
 		Reload();
 	}
+}
+
+
+
+void UCombatComponent::FireButtonPressed(bool bPressed)
+{//角色类中press事件触发后调用该函数
+	bFireButtonPressed = bPressed;
+
+	if (bFireButtonPressed && EquippedWeapon)
+	{
+		Fire();
+	}
+}
+
+bool UCombatComponent::CanFire()
+{
+	if (EquippedWeapon == nullptr) return false;
+	return !EquippedWeapon->IsEmpty() && bCanFire && CombatState == ECombatState::ECS_Unoccupied;//子弹为空，就不能开火,换弹时也不能开火
 }
 
 void UCombatComponent::Fire()
@@ -148,57 +255,8 @@ void UCombatComponent::MulticastFire_Implementation(const FVector_NetQuantize& T
 	}
 }
 
-void UCombatComponent::EquipWeapon(AWeapon* WeaponToEquip)//该函数仅在server上调用
-{
-	if (Character == nullptr || WeaponToEquip == nullptr) return;
-	if (EquippedWeapon)
-	{//避免捡起多把枪
-		EquippedWeapon->Dropped();
-	}
-	EquippedWeapon = WeaponToEquip;
-	EquippedWeapon->SetWeaponState(EWeaponState::EWS_Equipped);//更新武器状态为已装备
-	const USkeletalMeshSocket* HandSocket = Character->GetMesh()->GetSocketByName(FName("RightHandSocket"));
-	if (HandSocket)
-	{
-		HandSocket->AttachActor(EquippedWeapon, Character->GetMesh());//将武器和角色绑定
-	}
-	EquippedWeapon->SetOwner(Character);
-	//以上属性都会自动同步复制到客户端
-	EquippedWeapon->SetHUDAmmo();//在server上设置子弹数，在wapon类的OnRep_Owner函数同步给client
-	//设置武器类型名字hud
-	UEnum* EnumPtr = StaticEnum<EWeaponType>();
-	FText WeaponType = EnumPtr->GetDisplayNameTextByIndex(int32(WeaponToEquip->GetWeaponType()));
-	Controller = Controller == nullptr ? Cast<ABlasterPlayerController>(Character->Controller) : Controller;
-	if (Controller)
-	{
-		Controller->SetHUDWeaponType(WeaponType.ToString());
-	}
 
-	if (CarriedAmmoMap.Contains(EquippedWeapon->GetWeaponType()))
-	{//从weapon那里获取武器类型
-		CarriedAmmo = CarriedAmmoMap[EquippedWeapon->GetWeaponType()];
-	}
-	if (Controller)
-	{//在server上设置携带的子弹数，用OnRep_CarriedAmmo函数同步给client
-		Controller->SetHUDCarriedAmmo(CarriedAmmo);
-	}
-	if (EquippedWeapon->EquipSound)
-	{//播放捡枪声音
-		UGameplayStatics::PlaySoundAtLocation(
-			this,
-			EquippedWeapon->EquipSound,
-			Character->GetActorLocation()
-		);
-	}
-	if (EquippedWeapon->IsEmpty())
-	{
-		Reload();
-	}
 
-	//角色持枪后，角色朝向不会随移动方向改变，而是用leaning和strafing
-	Character->GetCharacterMovement()->bOrientRotationToMovement = false;
-	Character->bUseControllerRotationYaw = true;
-}
 
 void UCombatComponent::Reload()
 {
@@ -236,53 +294,7 @@ void UCombatComponent::FinishReloading()
 
 }
 
-void UCombatComponent::UpdateAmmoValues()
-{
-	if (Character == nullptr || EquippedWeapon == nullptr) return;
-	//更新子弹数
-	int32 ReloadAmount = AmountToReload();
-	if (CarriedAmmoMap.Contains(EquippedWeapon->GetWeaponType()))
-	{
-		CarriedAmmoMap[EquippedWeapon->GetWeaponType()] -= ReloadAmount;
-		CarriedAmmo = CarriedAmmoMap[EquippedWeapon->GetWeaponType()];
-	}
-	Controller = Controller == nullptr ? Cast<ABlasterPlayerController>(Character->Controller) : Controller;
-	if (Controller)
-	{//在server上设置携带的子弹数，用OnRep_CarriedAmmo函数同步给client
-		Controller->SetHUDCarriedAmmo(CarriedAmmo);
-	}
-	EquippedWeapon->AddAmmo(-ReloadAmount);
-}
 
-void UCombatComponent::UpdateCarriedAmmo()
-{
-	if (EquippedWeapon == nullptr) return;
-	if (CarriedAmmoMap.Contains(EquippedWeapon->GetWeaponType()))
-	{
-		CarriedAmmo = CarriedAmmoMap[EquippedWeapon->GetWeaponType()];
-	}
-	Controller = Controller == nullptr ? Cast<ABlasterPlayerController>(Character->Controller):Controller;
-	if (Controller)
-	{
-		Controller->SetHUDCarriedAmmo(CarriedAmmo);
-	}
-}
-
-void UCombatComponent::OnRep_CombatState()
-{
-	switch (CombatState)
-	{
-	case ECombatState::ECS_Reloading:
-		HandleReload();
-		break;
-	case ECombatState::ECS_Unoccupied:
-		if (bFireButtonPressed)
-		{
-			Fire();
-		}
-		break;
-	}
-}
 
 int32 UCombatComponent::AmountToReload()
 {
@@ -306,39 +318,70 @@ int32 UCombatComponent::AmountToReload()
 	
 }
 
-void UCombatComponent::OnRep_EquippedWeapon()
-{//这个onRep用来解决client自己上的leaning和strafing
-	if (EquippedWeapon && Character)
+void UCombatComponent::UpdateAmmoValues()
+{
+	if (Character == nullptr || EquippedWeapon == nullptr) return;
+	//更新子弹数
+	int32 ReloadAmount = AmountToReload();
+	if (CarriedAmmoMap.Contains(EquippedWeapon->GetWeaponType()))
 	{
-		//只在client上
-		EquippedWeapon->SetWeaponState(EWeaponState::EWS_Equipped);//更新武器状态为已装备
-		const USkeletalMeshSocket* HandSocket = Character->GetMesh()->GetSocketByName(FName("RightHandSocket"));
-		if (HandSocket)
-		{
-			HandSocket->AttachActor(EquippedWeapon, Character->GetMesh());//将武器和角色绑定
-		}
-		//角色持枪后，角色朝向不会随移动方向改变，而是用leaning和strafing
-		Character->GetCharacterMovement()->bOrientRotationToMovement = false;
-		Character->bUseControllerRotationYaw = true;
+		CarriedAmmoMap[EquippedWeapon->GetWeaponType()] -= ReloadAmount;
+		CarriedAmmo = CarriedAmmoMap[EquippedWeapon->GetWeaponType()];
+	}
+	Controller = Controller == nullptr ? Cast<ABlasterPlayerController>(Character->Controller) : Controller;
+	if (Controller)
+	{//在server上设置携带的子弹数，用OnRep_CarriedAmmo函数同步给client
+		Controller->SetHUDCarriedAmmo(CarriedAmmo);
+	}
+	EquippedWeapon->AddAmmo(-ReloadAmount);
+}
 
-		if (EquippedWeapon->EquipSound)
-		{
-			UGameplayStatics::PlaySoundAtLocation(
-				this,
-				EquippedWeapon->EquipSound,
-				Character->GetActorLocation()
-			);
-		}
-		//设置武器类型名字hud
-		UEnum* EnumPtr = StaticEnum<EWeaponType>();
-		FText WeaponType = EnumPtr->GetDisplayNameTextByIndex(int32(EquippedWeapon->GetWeaponType()));
-		Controller = Controller == nullptr ? Cast<ABlasterPlayerController>(Character->Controller) : Controller;
-		if (Controller)
-		{
-			Controller->SetHUDWeaponType(WeaponType.ToString());
-		}
+void UCombatComponent::InitializeCarriedAmmo()
+{//初始化每种武器初始弹药量
+	CarriedAmmoMap.Emplace(EWeaponType::EWT_AssaultRifle, StartingARAmmo);
+}
+
+void UCombatComponent::UpdateCarriedAmmo()
+{
+	if (EquippedWeapon == nullptr) return;
+	if (CarriedAmmoMap.Contains(EquippedWeapon->GetWeaponType()))
+	{
+		CarriedAmmo = CarriedAmmoMap[EquippedWeapon->GetWeaponType()];
+	}
+	Controller = Controller == nullptr ? Cast<ABlasterPlayerController>(Character->Controller):Controller;
+	if (Controller)
+	{
+		Controller->SetHUDCarriedAmmo(CarriedAmmo);
 	}
 }
+
+void UCombatComponent::OnRep_CarriedAmmo()
+{//在client上更新hud
+	Controller = Controller == nullptr ? Cast<ABlasterPlayerController>(Character->Controller) : Controller;
+	if (Controller)
+	{//在server上设置携带的子弹数，在wapon类的OnRep_CarriedAmmo函数同步给client
+		Controller->SetHUDCarriedAmmo(CarriedAmmo);
+	}
+}
+
+void UCombatComponent::OnRep_CombatState()
+{
+	switch (CombatState)
+	{
+	case ECombatState::ECS_Reloading:
+		HandleReload();
+		break;
+	case ECombatState::ECS_Unoccupied:
+		if (bFireButtonPressed)
+		{
+			Fire();
+		}
+		break;
+	}
+}
+
+
+
 
 void UCombatComponent::TraceUnderCrosshairs(FHitResult& TraceHitResult)
 {
@@ -360,15 +403,13 @@ void UCombatComponent::TraceUnderCrosshairs(FHitResult& TraceHitResult)
 	if (bScreenToWorld)
 	{
 		FVector Start = CrosshairWorldPosition;//摄像机camera位置
-		//FVector Starttmp = Start;
-		//DrawDebugSphere(GetWorld(), Start, 16.f, 12, FColor::Red, false);
+
 		//修改起始点到角色身前
 		if (Character)
 		{
 			float DistanceToCharacter = (Character->GetActorLocation() - Start).Size();//camera到角色的距离
 			Start += CrosshairWorldDirection * (DistanceToCharacter + 100.f);
 			//DrawDebugSphere(GetWorld(), Start, 16.f, 12, FColor::Red, false);
-			//DrawDebugLine(GetWorld(), Starttmp, Start, FColor::Blue, false, -1.f, 0, 0.f);
 		}
 
 		FVector End = Start + CrosshairWorldDirection * TRACE_LENGTH;//单位厘米，相当于8公里
@@ -493,6 +534,8 @@ void UCombatComponent::InterpFOV(float DeltaTime)
 	}
 }
 
+
+
 void UCombatComponent::SetAiming(bool bIsAiming)
 {
 	bAiming = bIsAiming;
@@ -512,23 +555,5 @@ void UCombatComponent::ServerSetAiming_Implementation(bool bIsAiming)
 	}
 }
 
-bool UCombatComponent::CanFire()
-{
-	if (EquippedWeapon == nullptr) return false;
-	return !EquippedWeapon->IsEmpty() && bCanFire && CombatState == ECombatState::ECS_Unoccupied;//子弹为空，就不能开火,换弹时也不能开火
-}
 
-void UCombatComponent::OnRep_CarriedAmmo()
-{//在client上更新hud
-	Controller = Controller == nullptr ? Cast<ABlasterPlayerController>(Character->Controller) : Controller;
-	if (Controller)
-	{//在server上设置携带的子弹数，在wapon类的OnRep_CarriedAmmo函数同步给client
-		Controller->SetHUDCarriedAmmo(CarriedAmmo);
-	}
-}
-
-void UCombatComponent::InitializeCarriedAmmo()
-{//初始化每种武器初始弹药量
-	CarriedAmmoMap.Emplace(EWeaponType::EWT_AssaultRifle, StartingARAmmo);
-}
 
